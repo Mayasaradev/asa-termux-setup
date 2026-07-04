@@ -1,4 +1,23 @@
-pkg update && pkg upgrade -y && pkg install git curl wget tree neovim nano vim python openssh nodejs termux-api gh zsh rust neofetch -y && chsh -s zsh && mkdir -p ~/.config && rm -rf ~/.config/nvim && git clone https://github.com/LazyVim/starter ~/.config/nvim && rm -rf ~/.config/nvim/.git && mkdir -p ~/.termux && printf "extra-keys = [['ESC','/','-','HOME','UP','END','PGDN'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGUP']]\n" > ~/.termux/termux.properties && termux-reload-settings && cat > ~/.zshrc << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+pkg update
+pkg upgrade -y
+pkg install git curl wget tree neovim nano vim python openssh nodejs termux-api gh zsh rust neofetch -y
+
+chsh -s zsh
+
+# LazyVim
+mkdir -p ~/.config
+rm -rf ~/.config/nvim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+
+# extra-keys Termux
+mkdir -p ~/.termux
+printf "extra-keys = [['ESC','/','-','HOME','UP','END','PGDN'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGUP']]\n" > ~/.termux/termux.properties
+termux-reload-settings
+
+# .zshrc Kali
+cat > ~/.zshrc << 'EOF'
 clear
 PROMPT=$'%F{red}┌──(%F{blue}%n@setup%F{red})-[%F{white}%*%F{red}]-[%F{white}%~%F{red}]\n└─%F{blue}$ %f'
 
@@ -10,3 +29,5 @@ alias zshrc='nvim ~/.zshrc'
 
 neofetch --ascii_distro kali 2>/dev/null || true
 EOF
+
+echo "Selesai! Restart Termux."
