@@ -1,4 +1,4 @@
-# asa termuz setup
+# asa termux setup
 
 setup:
 ```
