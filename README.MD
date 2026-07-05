@@ -2,6 +2,7 @@
 
 setup:
 ```
+apt update && apt full-upgrade -y
 pkg install curl -y
 curl -fsSL https://raw.githubusercontent.com/Mayasaradev/asa-termux-setup/main/command.sh | bash
 ```
