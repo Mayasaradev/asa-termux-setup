@@ -19,7 +19,19 @@ termux-reload-settings
 # .zshrc Kali
 cat >~/.zshrc <<'EOF'
 clear
-PROMPT=$'%F{red}┌──(%F{blue}%n@setup%F{red})-[%F{white}%*%F{red}]-[%F{white}%~%F{red}]\n└─%F{blue}$ %f'
+autoload -Uz vcs_info
+setopt PROMPT_SUBST
+
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr ' +'
+zstyle ':vcs_info:git:*' unstagedstr ' *'
+zstyle ':vcs_info:git:*' formats '%F{red}-[%F{red}%b%u%c%F{red}]'
+
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats '%F{red}-[%F{red} %b%u%c%F{red}]'
+
+PROMPT=$'%F{blue}󰣇 %F{red}┌──(%F{blue}%n@setup%F{red})-[%F{white}%*%F{red}]-[%F{white}%~%F{red}]${vcs_info_msg_0_}\n└─%F{blue}❯ %f'
 
 alias up="pkg update && pkg upgrade -y"
 alias in="pkg install -y"
