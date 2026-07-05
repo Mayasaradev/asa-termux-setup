@@ -1,9 +1,11 @@
 #!/data/data/com.termux/files/usr/bin/bash
 pkg update
 pkg upgrade -y
-pkg install git wget tree neovim nano vim python openssh nodejs termux-api gh zsh rust neofetch -y
+pkg install git wget tree neovim nano vim python openssh nodejs termux-api gh zsh rust neofetch nodejs-lts teemux-tools lazygit ripgrep fzf fd clang ruff lua-language-server luarocks -y
 
 chsh -s zsh
+
+termux-setup-storage
 
 # LazyVim
 mkdir -p ~/.config
