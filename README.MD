@@ -2,10 +2,8 @@
 
 setup:
 ```
-cd
-pkg install git
-git clone https://github.com/Mayasaradev/asa-setup-termux
-cd asa-setup-termux && bash command.txt && cd && rm -rf asa-setup-termux
+pkg install curl -y
+curl -fsSL https://raw.githubusercontent.com/Mayasaradev/asa-termux-setup/main/command.sh | bash
 ```
 
 ## Apa yang di-install?

@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 pkg update
 pkg upgrade -y
-pkg install git curl wget tree neovim nano vim python openssh nodejs termux-api gh zsh rust neofetch -y
+pkg install git wget tree neovim nano vim python openssh nodejs termux-api gh zsh rust neofetch -y
 
 chsh -s zsh
 
@@ -13,11 +13,11 @@ rm -rf ~/.config/nvim/.git
 
 # extra-keys Termux
 mkdir -p ~/.termux
-printf "extra-keys = [['ESC','/','-','HOME','UP','END','PGDN'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGUP']]\n" > ~/.termux/termux.properties
+printf "extra-keys = [['ESC','/','-','HOME','UP','END','PGDN'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGUP']]\n" >~/.termux/termux.properties
 termux-reload-settings
 
 # .zshrc Kali
-cat > ~/.zshrc << 'EOF'
+cat >~/.zshrc <<'EOF'
 clear
 PROMPT=$'%F{red}┌──(%F{blue}%n@setup%F{red})-[%F{white}%*%F{red}]-[%F{white}%~%F{red}]\n└─%F{blue}$ %f'
 
