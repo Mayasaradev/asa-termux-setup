@@ -33,7 +33,7 @@ precmd() { vcs_info }
 
 zstyle ':vcs_info:git:*' formats '%F{red}-[%F{red} %b%u%c%F{red}]'
 
-PROMPT=$'%F{blue}󰣇 %F{red}┌──(%F{blue}%n@setup%F{red})-[%F{white}%*%F{red}]-[%F{white}%~%F{red}]${vcs_info_msg_0_}\n└─%F{blue}❯ %f'
+PROMPT=$'%F{blue}%F{red}┌──(%F{blue}%n@setup%F{red})-[%F{white}%*%F{red}]-[%F{white}%~%F{red}]${vcs_info_msg_0_}\n└─%F{blue}❯ %f'
 
 alias up="pkg update && pkg upgrade -y"
 alias in="pkg install -y"
