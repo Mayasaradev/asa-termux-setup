@@ -49,5 +49,5 @@ fi
 #debian
 proot-distro login debian -- bash -c '
 apt update && apt upgrade -y 
-apt install curl
+apt install curl -y
 curl -fsSL https://raw.githubusercontent.com/Mayasaradev/asa-termux-setup/main/command_debian.sh | bash'
