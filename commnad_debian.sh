@@ -1,6 +1,6 @@
 apt update && apt upgrade -y
 apt install nala -y
-nala install -y python git tree vim nano wget neofetch curl tar xz-utils zsh
+nala install -y python3 git tree vim nano wget neofetch curl tar xz-utils zsh
 
 ARCH=$(uname -m)
 if [ "$ARCH" = "aarch64" ]; then ARCH="arm64"; else ARCH="x86_64"; fi

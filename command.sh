@@ -47,4 +47,7 @@ if ! proot-distro list | grep -q debian; then
 fi
 
 #debian
-proot-distro login debian -- bash -c 'curl -fsSL https://raw.githubusercontent.com/Mayasaradev/asa-termux-setup/main/command_debian.sh | bash'
+proot-distro login debian -- bash -c '
+apt update && apt upgrade -y 
+apt install curl
+curl -fsSL https://raw.githubusercontent.com/Mayasaradev/asa-termux-setup/main/command_debian.sh | bash'
